@@ -6,20 +6,31 @@ class Pizza:
     def __init__(self):
         self.crust = ""
         self.size = ""
-        self.topping = ""
+        self.toppings = []
         self.sauce = ""
         self.cheese = ""
+    def add_toppings(self, topping):
+        self.toppings.append(topping)
+    def print_order(self):
+        for topping in self.toppings:
+            if topping.len() == 1:
+                print(f"I would like a {self.size}-inch, {self.crust} pizza with {self.toppings}")
 
 """
 Add a method for interacting with a pizza's toppings, called add_topping.
 """
 
-def add_topping(self, topping):
-    self.topping = topping
 
 """
 Add a method for outputting a description of the pizza (sample output below).
+
+"I would like a 16-inch, deep-dish pizza with Pepperoni and Olives."
 """
 
-def description():
-    
+
+meat_lovers = Pizza()
+meat_lovers.size = 16
+meat_lovers.crust = "Deep dish"
+meat_lovers.add_toppings("Pepperoni")
+meat_lovers.add_toppings("Olives")
+meat_lovers.print_order()  
