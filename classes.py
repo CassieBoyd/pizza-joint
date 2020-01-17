@@ -12,9 +12,10 @@ class Pizza:
     def add_toppings(self, topping):
         self.toppings.append(topping)
     def print_order(self):
-        for topping in self.toppings:
-            if topping.len() == 1:
-                print(f"I would like a {self.size}-inch, {self.crust} pizza with {self.toppings}")
+        if len(self.toppings) == 1:
+            print(f"I would like a {self.size}-inch, {self.crust} pizza with {''.join(self.toppings)}.")
+        elif len(self.toppings) > 1:
+            for topping in self.toppings:
 
 """
 Add a method for interacting with a pizza's toppings, called add_topping.
@@ -32,5 +33,5 @@ meat_lovers = Pizza()
 meat_lovers.size = 16
 meat_lovers.crust = "Deep dish"
 meat_lovers.add_toppings("Pepperoni")
-meat_lovers.add_toppings("Olives")
+# meat_lovers.add_toppings("Olives")
 meat_lovers.print_order()  
