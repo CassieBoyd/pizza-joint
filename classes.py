@@ -14,9 +14,12 @@ class Pizza:
         if len(self.toppings) == 1:
             print(f"I would like a {self.size}-inch, {self.crust} pizza with {''.join(self.toppings)}.")
 
-        # If more than one topping, .join method is used on toppings list 
-        elif len(self.toppings) > 1:
-            print(f"I would like a {self.size}-inch, {self.crust} pizza with {', '.join(self.toppings[:-1])} and {self.toppings[-1]}")
+        elif len(self.toppings) == 2:
+            print(f"I would like a {self.size}-inch, {self.crust} pizza with {' and '.join(self.toppings)}.")
+
+        # If more than two toppings, .join method is used on toppings list with comma separator ranging from the beginning of the list up to, but not including, the last item [:-1]. Then the last topping is included at the end. 
+        elif len(self.toppings) > 2:
+            print(f"I would like a {self.size}-inch, {self.crust} pizza with {', '.join(self.toppings[:-1])}, and {self.toppings[-1]}")
 
 # https://stackoverflow.com/questions/44574485/joining-words-together-with-a-comma-and-and/44574565
             # print("I would like a {}-inch, {} pizza with {} and {}".format(self.size, self.crust,', '.join(self.toppings[:-1]), self.toppings[-1]))
